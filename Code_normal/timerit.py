@@ -1,6 +1,10 @@
 import time
 import logging
-
+# Configuración de logging
+logging.basicConfig(level=logging.INFO)
+######################################
+#Aspectos usando Decoradores
+######################################
 def timeit(cutpoint_function):
     def wrapper(self, *args, **kwargs):
         # Registra el tiempo de inicio
