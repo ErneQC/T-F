@@ -9,8 +9,7 @@ from timerit import timeit
 class Curve_IV(QThread):
     #Signals definition to main UI
     curve_signal = pyqtSignal(bool)
-    log_signal = pyqtSignal(str)  # Señal para enviar mensajes de log
-
+    
     def __init__(self, queue_curve):
         super().__init__()
         self.parar = False # senyal per para la lectura
@@ -26,7 +25,7 @@ class Curve_IV(QThread):
         self.data = []
 
         # Configuración del logger
-        self.logger = logging.getLogger('CurveIVLogger')
+        self.logger = logging.getLogger('CurveInversor')
         self.logger.setLevel(logging.DEBUG)
         # Archivo para logging
         file_handler = logging.FileHandler('logger.log')
@@ -39,7 +38,7 @@ class Curve_IV(QThread):
         file_handler.setFormatter(formatter)
         console_handler.setFormatter(formatter)
         self.logger.addHandler(file_handler)
-        self.logger.addHandler(console_handler)
+        self.logger.addHandler(console_handler) 
 
     def run(self):
         while not self.parar:  # Loop mientras no se cierra el programa
@@ -54,36 +53,38 @@ class Curve_IV(QThread):
                 self.missing_1 = True
                 self.data = []
             else:                                                   # Si ja s'han rebut les dades el programa espera una nova ordre de lectura
-                time.sleep(1)
+                #time.sleep(1)
                 continue
             while self.llegir and (self.missing_1) and not self.parar:   #if
                  # Bucle de lectura de dades, només es surt si es desactiva l'ordre de llegir, es reben totes les dades o si s'atura el programa
                 self.read_iv_curve()
-                time.sleep(1)
+                #time.sleep(1)
                # Mirem quines dades s'han rebut i omplim amb dades anteriors les que falten. Enviem error si ha fallat alguna lectura
             time.sleep(1)
         #fora del while
         self.curve_signal.emit(not self.parar)
         self.logger.info("STOPPED THREAD IV-CURVE!")
         print("STOPPED THREAD IV-CURVE!")
+
     @timeit
     def configuracio(self):                                                         # Configuració de la connexió
         try:
             self.concentradors = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
             self.concentradors.bind(('0.0.0.0', 1560))  # Escuchar en el puerto 55555 + 1570
-            self.logger.info("Connected to sensor Curve-IV")
+            self.logger.info("Connected to sensor Curve-IVs")
         except Exception:
             print('No connection to sensor Curve-IV. Retrying...')
             self.logger.info('No connection to sensor Curve-IV. Retrying...')
             self.conectat = False
         else:
             self.conectat = True
+
     @timeit            
     def read_iv_curve(self):                                                            # Petició i lectura dels concentradors
         if not self.conectat:
             self.configuracio()
         try:
-            self.concentradors.settimeout(5)
+            self.concentradors.settimeout(None)
             data, _ = self.concentradors.recvfrom(18192)
             response = data.decode().strip()
             input_data = response.split(',')

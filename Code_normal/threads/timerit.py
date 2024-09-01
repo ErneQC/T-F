@@ -1,6 +1,7 @@
 import time
 import logging
-
+# Configuración de logging
+logging.basicConfig(level=logging.INFO)
 ######################################
 #Aspectos usando Decoradores
 ######################################

@@ -3,7 +3,7 @@ from Irradiation import Irradiation
 import queue
 import sys
 from PyQt5.QtWidgets import QApplication
-from timeit import timeit
+
 class MainWindow(QWidget):
     def __init__(self):
         super().__init__()
