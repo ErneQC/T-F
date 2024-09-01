@@ -117,7 +117,7 @@ class Curve_IV(QThread):
                     processed_values.append(corrected_val)
                 else:
                     processed_values.append(-999)  # Valor no corregible
-
+        print (processed_values)
         return processed_values   
     @timeit             
     def tractar_dades(self, idata):
