@@ -6,7 +6,7 @@ import time
 import logging
 import json
 import minimalmodbus
-from timeit import timeit
+from timerit import timeit
 class Irradiation(QThread):
     # Señales para la UI principal
     conn_signal = pyqtSignal(bool)

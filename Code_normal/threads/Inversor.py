@@ -5,7 +5,7 @@ import socket
 import logging
 from umodbus import conf
 from umodbus.client import tcp
-from timeit import timeit
+from timerit import timeit
 # Configuración del logger
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 

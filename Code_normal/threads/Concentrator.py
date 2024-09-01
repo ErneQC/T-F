@@ -5,7 +5,7 @@ import threading
 import time
 import logging
 import socket
-from timeit import timeit
+from timerit import timeit
 class Concentrator(QThread):
     #Signals definition to main UI
     conn_signal = pyqtSignal(bool)

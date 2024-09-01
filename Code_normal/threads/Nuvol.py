@@ -10,7 +10,7 @@ from paho.mqtt import client as mqtt_client
 from PyQt5.QtCore import QThread, pyqtSignal, QMutex
 import paho.mqtt.client as mqtt
 import random
-from timeit import timeit
+from timerit import timeit
 class Nuvol(QThread):
 
     conn_signal = pyqtSignal(bool)

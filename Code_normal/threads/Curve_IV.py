@@ -5,7 +5,7 @@ import threading
 import time
 import logging
 import socket
-from timeit import timeit
+from timerit import timeit
 class Curve_IV(QThread):
     #Signals definition to main UI
     curve_signal = pyqtSignal(bool)
