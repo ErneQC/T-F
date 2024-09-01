@@ -1,0 +1,14 @@
+numpy
+pandas
+matplotlib
+scipy
+opencv-python
+tqdm
+openpyxl
+serial
+pyqt5==5.15.9
+pyqt5-tools==5.15.9.3.3
+umodbus
+minimalmodbus==2.1.1
+requests
+paho-mqtt==1.6.1

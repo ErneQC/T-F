@@ -1,0 +1,23 @@
+2024-08-31 20:03:55 - Connected to concentrators
+2024-08-31 20:16:23,331 - INFO - Thread running
+2024-08-31 20:16:23,335 - INFO - Connected to concentrators
+2024-08-31 20:16:29,674 - INFO - STOPPING CONCENTRADOR THREAD....
+2024-08-31 20:16:30,353 - INFO - No concentrators data received. Filling with previous data
+2024-08-31 20:16:31,365 - INFO - STOPPED THREAD CONCENTRADOR!
+2024-08-31 20:27:39,535 - INFO - Running IV-Curve thread...
+2024-08-31 20:27:39,536 - INFO - Connected to sensor Curve-IV
+2024-08-31 20:27:43,260 - INFO - STOPPING IV-CURVE THREAD...
+2024-08-31 20:33:56,530 - INFO - Error configuring sensor: could not open port '/dev/ttyACM0': FileNotFoundError(2, 'El sistema no puede encontrar la ruta especificada.', None, 3)
+2024-08-31 20:33:56,533 - INFO - Error configuring sensor: could not open port '/dev/ttyACM0': FileNotFoundError(2, 'El sistema no puede encontrar la ruta especificada.', None, 3)
+2024-08-31 20:33:56,534 - INFO - Error reading solar_irradiance: 'Irradiation' object has no attribute 'instrument'
+2024-08-31 20:33:56,535 - INFO - Error reading air_temperature: 'Irradiation' object has no attribute 'instrument'
+2024-08-31 20:34:56,537 - INFO - No radiation data received. Filling with previous data
+2024-08-31 20:34:59,555 - INFO - STOPPED IRRADIATION THREAD!
+2024-08-31 20:34:59,557 - INFO - STOPPING IRRADIATION THREAD....
+2024-08-31 20:34:59,611 - INFO - STOPPING IRRADIATION THREAD....
+2024-08-31 20:35:16,211 - INFO - Error configuring sensor: could not open port '/dev/ttyACM0': FileNotFoundError(2, 'El sistema no puede encontrar la ruta especificada.', None, 3)
+2024-08-31 20:35:16,214 - INFO - Error configuring sensor: could not open port '/dev/ttyACM0': FileNotFoundError(2, 'El sistema no puede encontrar la ruta especificada.', None, 3)
+2024-08-31 20:35:16,216 - INFO - Error reading solar_irradiance: 'Irradiation' object has no attribute 'instrument'
+2024-08-31 20:35:16,217 - INFO - Error reading air_temperature: 'Irradiation' object has no attribute 'instrument'
+2024-08-31 20:45:57,105 - INFO - No connection to inverter. Retrying...
+2024-08-31 20:46:00,407 - INFO - STOPPING INVERSOR THREAD....
