@@ -70,7 +70,6 @@ class Irradiation(QThread):
         else:
             self.conectat = True
             self.irr_stat_signal.emit(self.conectat)
-            self.log_with_timestamp('Connected to the radiation sensor')
             return "Connected"
 
     @log_calls
